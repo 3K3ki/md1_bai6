@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 style="text-align: center; margin-top: 450px">Do you love me</h1>
+<button id="btn_yes" value="" onclick="pressYes()" style="margin-left: 45%; width: 100px;height: 60px">yes</button>
+
+<button id="btn_no" value="no" onclick="prNo()" onmouseover="prNo()" style="position: absolute; width: 100px;height: 60px; margin-left: 20px">no</button>
+<h1 id="press_yes" style="text-align: center"></h1>
+</body>
+<script>
+function pressYes(){
+    document.getElementById("press_yes").innerHTML= "I DO <3";
+}
+document.getElementById("btn_no").addEventListener("mouseover", prNo);
+
+function prNo(){
+  let x = Math.round(Math.random() * window.innerWidth);
+  let y = Math.round(Math.random() * window.innerHeight);
+  document.getElementById("btn_no").style.left = x + "px";
+  document.getElementById("btn_no").style.top = y + "px";
+}
+</script>
+</html>

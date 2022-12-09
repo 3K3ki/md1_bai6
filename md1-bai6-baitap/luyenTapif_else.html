@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <input type="number" id="a"> <input type="number" id="b">
+  <button onclick="testChia()">Tính toán</button>
+<h1 id="ket_qua"></h1>
+  <h1>Nhap tuổi</h1>
+  <input type="number" id="age">
+<button onclick="tinhAge()">Tính age</button>
+<h1> Nhập số</h1>
+<input type="number" id="so">
+  <button onclick="soSanh0()">Tính</button>
+<h1 id="so_nguyen"></h1>
+<input type="number" id="so1" placeholder="Số 1">
+  <input type="number" id="so2" placeholder="Số 2">
+  <input type="number" id="so3" placeholder="Số 3">
+  <button onclick="GTLN3so()">Hiện</button>
+<h1 id="ket_so"></h1>
+  <h1>Xếp học lực</h1>
+  <input type="number" id="bktr" placeholder="Bài kiểm tra">
+  <input type="number" id="tgk" placeholder="Thi giữa kì">
+  <input type="number" id="dkc" placeholder="Điểm cuối kì">
+  <button onclick="rank()">Xếp hạng</button>
+<h1 id="xep_hang"></h1>
+  <h1>Tháng này được</h1>
+  <input type="number" id="money">
+  <input type="number" id="%money">
+  <button onclick="Commission()">Tính</button>
+  <h1 id="tien_hoa"></h1>
+</body>
+<script>
+  function testChia(){
+  let a = document.getElementById("a").value;
+  let b = document.getElementById("b").value;
+  if (a % b == 0){
+    document.getElementById("ket_qua").innerHTML= "Chia hết" ;
+  }else{
+   document.getElementById("ket_qua").innerHTML= "Chia không hết";
+  }
+  }
+    function tinhAge(){
+      let Age = document.getElementById("age").value;
+      if (Age >= 16){
+          document.write("Đủ tuổi");
+          document.write("<button onclick='backMenu()'>Quay lại</button>");
+      }else {
+          document.write("Chưa đủ tuổi");
+          document.write("<button onclick='backMenu()'>Quay lại</button>");
+      }
+
+    }
+    function backMenu() {
+       window.location.href = 'luyenTapif_else.html';
+    }
+    function soSanh0() {
+      let a = document.getElementById("so").value;
+      if (a > 0){
+        document.getElementById("so_nguyen").innerHTML = "Lớn hơn 0";
+      } else if (a < 0){
+          document.getElementById("so_nguyen").innerHTML = "Nhỏ hơn 0"
+      } else if(a == 0){
+          document.getElementById("so_nguyen").innerHTML = "= 0";
+      }
+    }
+    function GTLN3so() {
+        let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;
+        let c = document.getElementById("so3").value;
+        let max = a;
+        if ( max > c && max > b ) {
+            document.getElementById("ket_so").innerHTML = "Số lớn nhất là" + max;
+        }
+            else if (b > max && b > c) {
+                document.getElementById("ket_so").innerHTML = "Số lớn nhất là" + b;
+            } else if (c > max && c > b ) {
+                document.getElementById("ket_so").innerHTML = "Số lớn nhất là" + c;
+            }
+    }
+    function rank(){
+      let a = +document.getElementById("bktr").value;
+      let b = +document.getElementById("tgk").value;
+      let c = +document.getElementById("dkc").value;
+      let rank = (a + b + c ) / 3;
+      if (rank > 8){
+          document.getElementById("xep_hang").innerHTML = "Học lực giỏi";
+      }else if(6.5 < rank && rank < 8){
+        document.getElementById("xep_hang").innerHTML = "Học lực Khá"
+      } else if( rank < 6.5){
+          document.getElementById("xep_hang").innerHTML = "Học lực trung bình"
+      }
+      console.log('rank->>', a,b,c)
+    }
+function Commission(){
+    let a = document.getElementById("money").value;
+    let b = document.getElementById("%money").value;
+    let commission = (a * b) / 100;
+    document.getElementById("tien_hoa").innerHTML = "Tiền hoa hồng là " + commission + "đ";
+}
+</script>
+</html>

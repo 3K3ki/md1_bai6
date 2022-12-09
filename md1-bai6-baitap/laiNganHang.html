@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="so_tien" placeholder="Số tiền">
+<input type="number" id="so_thang" placeholder="Số tháng">
+<input type="number" id="lai_xuat" placeholder="Lãi xuaat">
+<button onclick="tinhLaiBank()">Tính lãi</button>
+<h1 id="ket_qua"></h1>
+</body>
+<script>
+    function tinhLaiBank() {
+        let a = document.getElementById("so_tien");
+        let b = document.getElementById("so_thang");
+        let c = document.getElementById("lai_xuat");
+        let tienLai = (12 * (a * c) / 100)  * b ;
+        document.getElementById("ket_qua").innerHTML= "Tiền Lãi" + tienLai;
+        console.log("Tiên------>",tienLai);
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input[type="range"]{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<label><input type="range" min="0" max="1" id="good" value="0" onclick="changeState()">g</label><br>
+<label><input type="range" min="0" max="1" id="fast" >f</label><br>
+<label><input type="range" min="0" max="1" id="cheep">c</label><br>
+</body>
+<script>
+    let good = document.getElementById("good");
+    function changeState(){
+        good.value = 1
+    }
+</script>
+</html>
